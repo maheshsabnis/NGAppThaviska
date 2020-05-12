@@ -23,6 +23,25 @@
             <!--Event Binding (click)-->
             <input type="button" value="New" class="btn btn-warning" (click)="clear()">
             <input type="button" value="Save" class="btn btn-success" (click)="save()">
+            <input type="button" value="update" class="btn btn-info" (click)="update()">
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control"name="search" placeholder="Search By Product Name or Category" [(ngModel)]="serachText" (input)="searchProduct()">
+          <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2">Search</span>
+          </div>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="sort" (click)="sortAlphabetical(1)">
+          <label class="form-check-label" for="exampleRadios1">
+            Sort A-Z
+          </label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="reverse" (click)="sortAlphabetical(-1)">
+            <label class="form-check-label" for="exampleRadios1">
+              Sort Z-A
+            </label>
+          </div>
         </div>
     </form>
 </div>
@@ -31,13 +50,16 @@
         <thead>
             <tr>
                 <th *ngFor="let h of headers">{{h}}</th>
+                <th>Action</th>
             </tr>
+
         </thead>
         <tbody>
-            <tr *ngFor="let prd of products" (click)="getSelectedProduct(prd)">
-                <td *ngFor="let h of headers">
+            <tr *ngFor="let prd of products;index as i">
+                <td *ngFor="let h of headers"  (click)="getSelectedProduct(prd,i)">
                     {{prd[h]}}
                 </td>
+                <td><input type="button" value="X" class="btn btn-danger" (click)="delete(prd)"></td>
             </tr>
         </tbody>
     </table>
