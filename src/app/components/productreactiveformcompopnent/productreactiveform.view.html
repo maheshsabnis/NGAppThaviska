@@ -3,18 +3,22 @@
     <form name="frmprd" [formGroup]='frmPrd' (ngSubmit)="save()">
         <div class="form-group">
             <label>Product Id</label>
-            <input type="text" name="ProductId" formControlName="ProductId" class="form-control">
+            <input type="text" name="ProductId" formControlName="ProductId" class="form-control" [ngClass]="{'is-invalid':!frmPrd.controls.ProductId.valid && (frmPrd.controls.ProductId.touched || frmPrd.controls.ProductId.dirty)}">
             <div class="alert alert-danger" *ngIf="frmPrd.controls.ProductId.dirty && !frmPrd.controls.ProductId.valid">
                 <p *ngIf="frmPrd.controls.ProductId.errors.required">Product Id is required</p>
                 <p *ngIf="frmPrd.controls.ProductId.errors.minlength">Product Id must be 2 digits minimum</p>
                 <p *ngIf="frmPrd.controls.ProductId.errors.maxlength">Product Id must be 6 digits maximum</p>
                 <p *ngIf="frmPrd.controls.ProductId.errors.pattern">Product Id must be positive integer</p>
                 <p *ngIf="frmPrd.controls.ProductId.errors.noteven">Value must be even number</p>
+                <p *ngIf="frmPrd.controls.ProductId.errors.bool">Duplicate value not allowed</p>
             </div>
         </div>
         <div class="form-group">
             <label>Product Name</label>
-            <input type="text" name="ProductName" formControlName="ProductName" class="form-control">
+            <input type="text" name="ProductName" formControlName="ProductName" class="form-control"  [ngClass]="{'is-invalid':!frmPrd.controls.ProductName.valid && (frmPrd.controls.ProductName.touched || frmPrd.controls.ProductId.dirty)}">
+            <div class="alert alert-danger" *ngIf="frmPrd.controls.ProductName.dirty && !frmPrd.controls.ProductName.valid" >
+              <p *ngIf="frmPrd.controls.ProductName.errors.pattern">ProductName start with Uppercase and special char not allowed</p>
+            </div>
         </div>
         <div class="form-group">
             <label>Price</label>
