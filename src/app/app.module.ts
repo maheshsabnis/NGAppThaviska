@@ -14,6 +14,7 @@ import { RadioListComponent } from './directives/app.rediolist.component';
 import { UtilityServiceComponent } from './components/utilityservicecomponent/app.utilityservice.component';
 import { DeptSenderComponent } from './components/masterdetailscommunication/app.deptsender.component';
 import { EmpReceiverComponent } from './components/masterdetailscommunication/app.empreceiver.component';
+import { SearchComponent } from './components/masterdetailscommunication/app.search.component';
 
 
 
@@ -44,7 +45,8 @@ import { EmpReceiverComponent } from './components/masterdetailscommunication/ap
     RadioListComponent,
     UtilityServiceComponent,
     DeptSenderComponent,
-    EmpReceiverComponent
+    EmpReceiverComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
@@ -52,7 +54,7 @@ import { EmpReceiverComponent } from './components/masterdetailscommunication/ap
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
-  bootstrap: [ DeptSenderComponent,
+  bootstrap: [ SearchComponent,DeptSenderComponent,
     EmpReceiverComponent]
 })
 export class AppModule { }
