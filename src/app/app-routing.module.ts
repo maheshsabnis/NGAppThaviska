@@ -16,7 +16,7 @@ const routes: Routes = [
      ]},
   {path: 'contact/:id', component: ContactComponent},
   // lazy loading od module
-  {path: 'lazy', loadChildren:()=>import('./../lib/module/app.lazy.module').then(m=>m.LazyModule)},
+  {path: 'lazy', loadChildren:()=>import('./../lib/module/app.lazy.module').then(m=>m.LazyModule) },
   {path: '**', redirectTo: ''} // redirect to default home
 ];
 

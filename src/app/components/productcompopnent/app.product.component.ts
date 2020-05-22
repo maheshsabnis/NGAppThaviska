@@ -13,12 +13,14 @@ export class ProductComponent implements OnInit {
   cats = Categories;
   headers: Array<string>;
   value: number;
+  productTax: number;
   constructor() {
       this.product = new Product(0, '', 0, '');
       this.products = new Array<Product>();
       this.logic = new Logic();
-      this.headers  =new Array<string>();
+      this.headers  = new Array<string>();
       this.value = 0;
+      this.productTax = 0;
   }
 
   // inoked after the ctor
@@ -36,8 +38,15 @@ export class ProductComponent implements OnInit {
   }
   save(): void {
     this.products = this.logic.saveProducts(this.product);
+    this.productTax = this.product.Price * 0.02;
     console.log(JSON.stringify(this.products));
   }
+
+  // calculateProductTax() : number {
+  //   this.productTax = this.product.Price * 0.02;
+  //   return this.productTax;
+  // }
+
   getSelectedProduct(p: Product): void {
       this.product = Object.assign({}, p);
   }

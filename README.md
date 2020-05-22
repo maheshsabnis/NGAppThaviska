@@ -195,5 +195,25 @@ Day 5: Exercise
    3. SharedModules aka FeatureModules
       1. The SharedModule must import 'CommonModule' if the SharedModule has any components in it.
 4. Developing the Build for CSS and Custom JavaScript
-5. State Management for Front-End
-6. Testing
+   1. SASS --> RICH CSS Creation objects using scss file
+   2. Transform scss to css
+      1. Fornt-End Task Manager
+         1. JS Compilation, Minification, Testing, Merging, etc.
+            1. Grunt, a Object Model used for performing JS Tasks in steps using gruntfile.js
+         2. Gulp, a task manager that is used to run task as a stream in a 'pipe'
+            1. gulpfile.js
+               1. gulp package, npm install -g gulp
+               2. gulp-cli, npm install -g gulp-cli
+      2. IOTA CSS
+5. Implementation of Custom Decorators
+   1. experimentalDecorators
+6. State Management for Front-End
+   1. NGRX
+7. Testing
+
+=====================================================================================
+Final Problem Statement
+
+1. Create a Component Test that will make sure that the following DOM UI is generated when events are fired
+   1. When the Save button is clicked, the table should show the new last row with newly added product data
+   2. If the ProductId is repeated then the border-color of the TextBox should be read and the <div></div> tag shows the error message as 'Product Id is already present'

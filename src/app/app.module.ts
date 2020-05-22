@@ -28,6 +28,7 @@ import { HomeComponent } from './routingapp/app.home.component';
 import { AboutComponent } from './routingapp/app.about.component';
 import { ContactComponent } from './routingapp/app.contact.component';
 import { MainComponent } from './routingapp/app.main.component';
+import { SampleComponentComponent } from './sample-component/sample-component.component';
 
 
 
@@ -65,7 +66,8 @@ import { MainComponent } from './routingapp/app.main.component';
     ColorDirective,
     ColorDirectiveComponent,
     HomeComponent, AboutComponent, ContactComponent,
-    MainComponent
+    MainComponent,
+    SampleComponentComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
@@ -77,7 +79,7 @@ import { MainComponent } from './routingapp/app.main.component';
   // use entryComponent so that the Angular Elements will be
   // set for DOM Execution
   entryComponents: [Test1ElementComponent],
-  bootstrap: [MainComponent]
+  bootstrap: [ProductComponent]
 })
 export class AppModule {
  // Inject the Injector object in ctor, this will be used
